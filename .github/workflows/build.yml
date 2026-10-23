@@ -9,7 +9,7 @@ jobs:
       - uses: actions/setup-java@v4
         with: {distribution: temurin, java-version: 17}
       - uses: gradle/actions/setup-gradle@v4
-        with: {gradle-version: 8.9, cache-disabled: true}
-      - run: cd TradingBuddy && gradle assembleDebug --no-daemon
+        with: {gradle-version: 8.13, cache-disabled: true}
+      - run: cd TradingBuddy && gradle assembleRelease --no-daemon
       - uses: actions/upload-artifact@v4
-        with: {name: TradingBuddy-APK, path: TradingBuddy/app/build/outputs/apk/debug/app-debug.apk}
+        with: {name: TradingBuddy-APK, path: TradingBuddy/app/build/outputs/apk/release/app-release.apk}
